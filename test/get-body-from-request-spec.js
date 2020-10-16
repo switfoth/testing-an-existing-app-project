@@ -9,10 +9,32 @@ describe("The getBodyFromRequest function", () => {
   });
 
   it('returns an empty string for no body', done => {
-    expect.fail('please write this test');
+    let testPromise = getBodyFromRequest(fakeReq);
+    fakeReq.emit('end');
+    testPromise
+      .then(body => {
+        if (body === '') {
+          done()
+        } else {
+          done(`Failed. Got "${body}"`)
+        }
+      })
   });
 
   it('returns the data read from the stream', done => {
-    expect.fail('please write this test');
+    let testPromise = getBodyFromRequest(fakeReq);
+    let data1 = 'hello';
+    let data2 = ' world';
+    fakeReq.emit('data', data1);
+    fakeReq.emit('data', data2);
+    fakeReq.emit('end');
+    testPromise
+      .then(body => {
+        if (body === data1 + data2) {
+          done()
+        } else {
+          done(`Failed. didn't get expected result`)
+        }
+      })
   });
 });
