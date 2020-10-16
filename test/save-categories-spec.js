@@ -7,9 +7,7 @@ describe("saveCategories()", () => {
     const newCategory = 'New Category';
 
     // Act
-    // Call the saveCategories function with the categories
-    // and newCategory values and store the result in a
-    // variable named "result"
+    let result = saveCategories(categories, newCategory)
 
     // Assert
     expect(result).to.include(newCategory);
@@ -28,12 +26,13 @@ describe("saveCategories()", () => {
     // of two arrays instead of the "equal" method.
     // If the array in result is sorted, what should you
     // compare to?
-    expect.fail('please write this test');
+    expect(result).to.eql(['Cat 2', 'Cat 3', 'Cat1'])
   });
 
   it('makes sure the result and the original are different', () => {
     // Arrange
-    // Declare any categories and newCategory values here.
+    let categories = ["Binxie"]
+    let newCategory = ["Bots"]
 
     // Act
     const result = saveCategories(categories, newCategory);

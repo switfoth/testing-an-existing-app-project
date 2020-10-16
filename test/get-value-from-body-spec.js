@@ -8,14 +8,11 @@ describe("The getValueFromBody function", () => {
     const key = "notThere";
 
     // Act
-    // Write code to invoke getValueFromBody and collect
-    // the result
+    let testFunc = getValueFromBody(body, key);
 
 
     // Assert
-    // Replace the fail line with an assertion for the
-    // expected value of ""
-    expect.fail('please write this test');
+    expect(testFunc).to.equal("");
   });
 
   it('returns an empty string for a body without the key', () => {
@@ -24,14 +21,12 @@ describe("The getValueFromBody function", () => {
     const key = "notThere";
 
     // Act
-    // Write code to invoke getValueFromBody and collect
-    // the result
+    let testFunc = getValueFromBody(body, key);
 
 
     // Assert
-    // Replace the fail line with an assertion for the
-    // expected value of ""
-    expect.fail('please write this test');
+    expect(testFunc).to.equal("");
+
   });
 
   it('returns the value of the key in a simple body', () => {
@@ -39,29 +34,23 @@ describe("The getValueFromBody function", () => {
     const key = "name";
 
     // Act
-    // Write code to invoke getValueFromBody and collect
-    // the result
+    let testFunc = getValueFromBody(body, key);
 
 
     // Assert
-    // Replace the fail line with an assertion for the
-    // expected value of "Bess"
-    expect.fail('please write this test');
+    expect(testFunc).to.equal("Bess");
   });
 
   it('returns the value of the key in a complex body', () => {
     const body = "name=Bess&age=29&job=Boss";
-    // Select one of the keys in the body
+    const key = "age"
 
     // Act
-    // Write code to invoke getValueFromBody and collect
-    // the result
+    let testFunc = getValueFromBody(body, key);
 
 
     // Assert
-    // Replace the fail line with an assertion for the
-    // expected value for the key that you selected
-    expect.fail('please write this test');
+    expect(testFunc).to.equal("29");
   });
 
   it('decodes the return value of URL encoding', () => {
@@ -69,14 +58,10 @@ describe("The getValueFromBody function", () => {
     const key = "level";
 
     // Act
-    // Write code to invoke getValueFromBody and collect
-    // the result
+    let testFunc = getValueFromBody(body, key);
 
 
     // Assert
-    // Replace the fail line with an assertion for the
-    // expected value for the key that you selected that
-    // has the encoded value in it
-    expect.fail('please write this test');
+    expect(testFunc).to.equal("Level Thirty-One");
   });
 });
